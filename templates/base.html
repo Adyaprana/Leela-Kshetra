@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jagannath And Radhakrishna Temple{% endblock %}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-icon">ॐ</span>
+                <span class="nav-title">ଜୟ ଜଗନ୍ନାଥ</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+                    Home
+                </a>
+                <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+                    About
+                </a>
+                <a href="{{ url_for('deities') }}" class="nav-link {% if request.endpoint == 'deities' %}active{% endif %}">
+                    Deities
+                </a>
+                <a href="{{ url_for('services') }}" class="nav-link {% if request.endpoint == 'services' %}active{% endif %}">
+                    Services
+                </a>
+                <a href="{{ url_for('blog') }}" class="nav-link {% if request.endpoint == 'blog' %}active{% endif %}">
+                    blog
+                </a>
+                <a href="{{ url_for('quotes_page') }}" class="nav-link {% if request.endpoint == 'quotes_page' %}active{% endif %}">
+                    quotes
+                </a>
+                <a href="{{ url_for('events_page') }}" class="nav-link {% if request.endpoint == 'events_page' %}active{% endif %}">
+                    Events
+                </a>
+                <a href="{{ url_for('visit') }}" class="nav-link {% if request.endpoint == 'visit' %}active{% endif %}">
+                    Visit
+                </a>
+                <a href="{{ url_for('donation') }}" class="nav-link {% if request.endpoint == 'donation' %}active{% endif %}">
+                    Donate
+                </a>
+                <a href="{{ url_for('gallery') }}" class="nav-link {% if request.endpoint == 'gallery' %}active{% endif %}">
+                    Gallery
+                </a>
+                <a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
+                    Contact
+                </a>
+         
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        <span class="flash-icon">⭕</span>
+                        {{ message }}
+                        <button class="flash-close">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <span class="footer-icon">ॐ</span>
+                    जगन्नाथ मंदिर
+                </h3>
+                <p class="footer-description">
+                    Experience divine peace and spiritual awakening at our sacred temple. 
+                    Join us in celebrating the rich heritage of Hindu culture and devotion.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('deities') }}">Our Deities</a></li>
+                    <li><a href="{{ url_for('events_page') }}">Events</a></li>
+                    <li><a href="{{ url_for('quotes_page') }}">Quotes</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                    <li><a href="{{ url_for('services') }}">Puja Services</a></li>
+                    <li><a href="{{ url_for('donation') }}">Donations</a></li>
+                    <li><a href="{{ url_for('visit') }}">Visit Us</a></li>
+                    <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Contact Info</h4>
+                <div class="contact-info">
+                    <p><span class="contact-icon">⭕</span> P8XF+27V, Badamandaruni, Odisha 756034</p>
+                    <p><span class="contact-icon">⭕</span> +91 0000000000</p>
+                    <p><span class="contact-icon">⭕</span> Jagannath_Temple14@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; {{ current_year}} Jagannath And Radhakrishna Temple. All Rights Reserved.</p>
+                <p>Built with devotion and love by Adyaprana Pradhan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

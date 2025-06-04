@@ -1,0 +1,717 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Spiritual Quotes - Jagannath And Radhakrishna Temple{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-title">Daily Spiritual Wisdom</h1>
+            <p class="page-subtitle">Find inspiration and guidance through sacred teachings and timeless wisdom</p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Quote -->
+<section class="featured-quote-section">
+    <div class="container">
+        <div class="featured-quote-card">
+            <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <h2 class="section-title">Quote of the Day</h2>
+            <blockquote class="featured-quote">
+                "You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions."
+            </blockquote>
+            <cite class="featured-source">- Bhagavad Gita, Chapter 2, Verse 47</cite>
+            <div class="quote-actions">
+                <button class="btn btn-outline share-quote">
+                    <i class="fas fa-share-alt"></i> Share Quote
+                </button>
+                <button class="btn btn-secondary new-quote">
+                    <i class="fas fa-refresh"></i> New Quote
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quotes Collection -->
+<section class="quotes-collection">
+    <div class="container">
+        <h2 class="section-title">Sacred Wisdom Collection</h2>
+        
+        <div class="quotes-filter">
+            <button class="filter-btn active" data-category="all">All Quotes</button>
+            <button class="filter-btn" data-category="bhagavad-gita">Bhagavad Gita</button>
+            <button class="filter-btn" data-category="upanishads">Upanishads</button>
+            <button class="filter-btn" data-category="vedas">Vedas</button>
+            <button class="filter-btn" data-category="saints">Saints & Sages</button>
+        </div>
+
+        <div class="quotes-grid">
+            {% for quote in quotes %}
+            <div class="quote-card" data-category="bhagavad-gita">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "{{ quote.text }}"
+                    </blockquote>
+                    <cite class="quote-source">- {{ quote.source }}</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- Additional Static Quotes -->
+            <div class="quote-card" data-category="bhagavad-gita">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place."
+                    </blockquote>
+                    <cite class="quote-source">- Bhagavad Gita, Chapter 6, Verse 19</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="upanishads">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "Truth alone triumphs, not falsehood. Through truth, the divine path is spread out."
+                    </blockquote>
+                    <cite class="quote-source">- Mundaka Upanishad</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="upanishads">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "Arise, awake, and stop not till the goal is reached."
+                    </blockquote>
+                    <cite class="quote-source">- Katha Upanishad</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="vedas">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "We are what our thoughts have made us; so take care about what you think."
+                    </blockquote>
+                    <cite class="quote-source">- Rigveda</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="bhagavad-gita">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "Be fearless and pure; never waver in your determination or your dedication to the spiritual life."
+                    </blockquote>
+                    <cite class="quote-source">- Bhagavad Gita, Chapter 16, Verse 1</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="saints">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "The best way to find yourself is to lose yourself in the service of others."
+                    </blockquote>
+                    <cite class="quote-source">- Mahatma Gandhi</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="saints">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "Where there is love there is life."
+                    </blockquote>
+                    <cite class="quote-source">- Mahatma Gandhi</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quote-card" data-category="bhagavad-gita">
+                <div class="quote-content">
+                    <div class="quote-mark">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "The wise see knowledge and action as one; they see truly."
+                    </blockquote>
+                    <cite class="quote-source">- Bhagavad Gita, Chapter 5, Verse 4</cite>
+                </div>
+                <div class="quote-actions-small">
+                    <button class="action-btn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" title="Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Daily Inspiration -->
+<section class="daily-inspiration">
+    <div class="container">
+        <div class="inspiration-card">
+            <h2>Daily Spiritual Inspiration</h2>
+            <p>
+                Receive a new spiritual quote every day to guide your journey and inspire your soul. 
+                Let ancient wisdom illuminate your path to inner peace and divine connection.
+            </p>
+            <div class="inspiration-features">
+                <div class="feature-item">
+                    <i class="fas fa-calendar-day"></i>
+                    <span>Daily Updates</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Sacred Texts</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Spiritual Growth</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Easy Sharing</span>
+                </div>
+            </div>
+            <div class="inspiration-actions">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                    <i class="fas fa-bell"></i> Get Daily Quotes
+                </a>
+                <a href="{{ url_for('blog') }}" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Read More Wisdom
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.page-hero {
+    height: 60vh;
+   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
+    cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.page-hero-content {
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.featured-quote-section {
+    padding: 5rem 0;
+    background: var(--gradient-saffron);
+    color: var(--text-light);
+}
+
+.featured-quote-card {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: var(--secondary-gold);
+    margin-bottom: 2rem;
+}
+
+.featured-quote {
+    font-size: 2rem;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-primary);
+}
+
+.featured-source {
+    font-size: 1.2rem;
+    color: var(--light-cream);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.quote-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quotes-collection {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.quotes-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-gold);
+    background: transparent;
+    color: var(--primary-gold);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-gold);
+    color: var(--text-dark);
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.quote-card {
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    transition: var(--transition);
+    position: relative;
+    border-left: 4px solid var(--primary-gold);
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+.quote-mark {
+    font-size: 2rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+}
+
+.quote-source {
+    color: var(--temple-brown);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.quote-actions-small {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.quote-card:hover .quote-actions-small {
+    opacity: 1;
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: var(--primary-gold);
+    color: var(--text-dark);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.action-btn:hover {
+    background: var(--secondary-gold);
+    transform: scale(1.1);
+}
+
+.daily-inspiration {
+    padding: 5rem 0;
+    background: var(--cream);
+}
+
+.inspiration-card {
+    background: var(--text-light);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.inspiration-card h2 {
+    color: var(--temple-brown);
+    margin-bottom: 1rem;
+}
+
+.inspiration-card p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.inspiration-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--temple-brown);
+    font-weight: 500;
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--primary-gold);
+}
+
+.inspiration-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Filter Animation */
+.quote-card.hidden {
+    display: none;
+}
+
+.quote-card.show {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-quote {
+        font-size: 1.5rem;
+    }
+    
+    .quotes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote-actions,
+    .inspiration-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .quote-actions .btn,
+    .inspiration-actions .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .quotes-filter {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-quote {
+        font-size: 1.2rem;
+    }
+    
+    .featured-source {
+        font-size: 1rem;
+    }
+    
+    .inspiration-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Quote filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const quoteCards = document.querySelectorAll('.quote-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const category = this.dataset.category;
+            
+            // Filter quote cards
+            quoteCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.classList.add('show');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('show');
+                }
+            });
+        });
+    });
+    
+    // Copy quote functionality
+    const copyButtons = document.querySelectorAll('.action-btn[title="Copy"]');
+    copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const quoteCard = this.closest('.quote-card');
+            const quoteText = quoteCard.querySelector('.quote-text').textContent;
+            const quoteSource = quoteCard.querySelector('.quote-source').textContent;
+            const fullQuote = `${quoteText}\n${quoteSource}`;
+            
+            navigator.clipboard.writeText(fullQuote).then(() => {
+                // Show success feedback
+                this.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        });
+    });
+    
+    // Share quote functionality
+    const shareButtons = document.querySelectorAll('.action-btn[title="Share"], .share-quote');
+    shareButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const quoteCard = this.closest('.quote-card') || this.closest('.featured-quote-card');
+            const quoteText = quoteCard.querySelector('.quote-text, .featured-quote').textContent;
+            const quoteSource = quoteCard.querySelector('.quote-source, .featured-source').textContent;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Spiritual Quote',
+                    text: `${quoteText}\n${quoteSource}`,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const shareText = `${quoteText}\n${quoteSource}\n\nFrom: ${window.location.href}`;
+                navigator.clipboard.writeText(shareText);
+                alert('Quote copied to clipboard!');
+            }
+        });
+    });
+    
+    // Favorite functionality (placeholder)
+    const favoriteButtons = document.querySelectorAll('.action-btn[title="Favorite"]');
+    favoriteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('favorited');
+            if (this.classList.contains('favorited')) {
+                this.innerHTML = '<i class="fas fa-heart" style="color: #e74c3c;"></i>';
+            } else {
+                this.innerHTML = '<i class="fas fa-heart"></i>';
+            }
+        });
+    });
+    
+    // New quote functionality
+    const newQuoteButton = document.querySelector('.new-quote');
+    if (newQuoteButton) {
+        newQuoteButton.addEventListener('click', function() {
+            // This would typically fetch a new quote from the server
+            // For now, we'll just show a random quote from the existing ones
+            const visibleQuotes = document.querySelectorAll('.quote-card:not([style*="display: none"])');
+            if (visibleQuotes.length > 0) {
+                const randomQuote = visibleQuotes[Math.floor(Math.random() * visibleQuotes.length)];
+                randomQuote.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                randomQuote.style.animation = 'none';
+                randomQuote.offsetHeight; // Trigger reflow
+                randomQuote.style.animation = 'fadeInUp 0.5s ease-out';
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

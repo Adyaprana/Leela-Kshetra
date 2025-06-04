@@ -1,0 +1,494 @@
+{% extends "base.html" %}
+
+{% block title %}Donations - Jagannath And Radhakrishna Temple{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-title">Support Our Sacred Mission</h1>
+            <p class="page-subtitle">Your generous contributions help us maintain and enhance our spiritual sanctuary</p>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Form Section -->
+<section class="donation-form-section">
+    <div class="container">
+        <div class="donation-grid">
+            <div class="donation-info">
+                <h2 class="section-title">Make a Difference</h2>
+                <p class="donation-description">
+                    Your donations help us maintain our sacred temple, support community programs, 
+                    and continue our mission of spiritual service. Every contribution, no matter 
+                    the size, makes a meaningful impact on our temple community.
+                </p>
+                
+                <div class="donation-impact">
+                    <h3>How Your Donation Helps:</h3>
+                    <ul class="impact-list">
+                        <li><i class="fas fa-check-circle"></i> Temple maintenance and upkeep</li>
+                        <li><i class="fas fa-check-circle"></i> Daily puja and ritual expenses</li>
+                        <li><i class="fas fa-check-circle"></i> Community events and festivals</li>
+                        <li><i class="fas fa-check-circle"></i> Educational and spiritual programs</li>
+                        <li><i class="fas fa-check-circle"></i> Food distribution (Prasadam)</li>
+                        <li><i class="fas fa-check-circle"></i> Supporting temple staff</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="donation-form-container">
+                <form class="donation-form" method="POST">
+                    <h3 class="form-title">
+                        <i class="fas fa-heart"></i>
+                        Make a Donation
+                    </h3>
+                    
+                    <div class="amount-selection">
+                        <label class="form-label">Select Amount:</label>
+                        <div class="amount-buttons">
+                            <button type="button" class="amount-btn" data-amount="25">₹25</button>
+                            <button type="button" class="amount-btn" data-amount="50">₹50</button>
+                            <button type="button" class="amount-btn" data-amount="100">₹100</button>
+                            <button type="button" class="amount-btn" data-amount="500">₹500</button>
+                            <button type="button" class="amount-btn" data-amount="1000">₹1000</button>
+                            <button type="button" class="amount-btn" data-amount="custom">Custom</button>
+                        </div>
+                        <input type="number" name="amount" id="amount" class="form-input" placeholder="Enter amount" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name:</label>
+                        <input type="text" name="name" id="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" name="email" id="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="purpose" class="form-label">Donation Purpose:</label>
+                        <select name="purpose" id="purpose" class="form-input">
+                            <option value="general">General Temple Fund</option>
+                            <option value="maintenance">Temple Maintenance</option>
+                            <option value="festivals">Festival Celebrations</option>
+                            <option value="food">Food Distribution</option>
+                            <option value="education">Educational Programs</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message (Optional):</label>
+                        <textarea name="message" id="message" class="form-input" rows="4" placeholder="Share your thoughts or special requests..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="anonymous" id="anonymous">
+                            <span class="checkmark"></span>
+                            Make this donation anonymous
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary donation-submit">
+                        <i class="fas fa-heart"></i>
+                        Donate Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Other Ways to Donate -->
+<section class="other-donations">
+    <div class="container">
+        <h2 class="section-title">Other Ways to Contribute</h2>
+        <div class="donation-methods">
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Bank Transfer</h3>
+                <p>Make a direct bank transfer to our temple account:</p>
+                <div class="bank-details">
+                    <p><strong>Account Name:</strong> Jagannath And Radhakrishna Temple</p>
+                    <p><strong>Account Number:</strong> 1234567890</p>
+                    <p><strong>IFSC Code:</strong> BANK0001234</p>
+                    <p><strong>Bank:</strong> State Bank of India</p>
+                </div>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>By Check</h3>
+                <p>Mail your check to our temple address:</p>
+                <div class="address-details">
+                    <p><strong>Payable to:</strong> Jagannath And Radhakrishna Temple</p>
+                    <p><strong>Address:</strong><br>
+                    P8XF+27V, Badamandaruni<br>
+                    Balasore, Odisha 756034</p>
+                </div>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Volunteer Your Time</h3>
+                <p>Your time and skills are valuable contributions:</p>
+                <ul class="volunteer-list">
+                    <li>Temple cleaning and maintenance</li>
+                    <li>Event organization and coordination</li>
+                    <li>Teaching and educational programs</li>
+                    <li>Administrative support</li>
+                    <li>Community outreach</li>
+                </ul>
+                <a href="{{ url_for('contact') }}" class="volunteer-link">Contact us to volunteer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Recognition -->
+<section class="donation-recognition">
+    <div class="container">
+        <h2 class="section-title">Recognition & Gratitude</h2>
+        <div class="recognition-content">
+            <p class="recognition-text">
+                We deeply appreciate all our donors and supporters. Your generosity enables us to 
+                continue our sacred mission and serve our community. All donations are tax-deductible 
+                under Section 80G of the Income Tax Act.
+            </p>
+            <div class="recognition-features">
+                <div class="feature-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Tax-deductible receipts provided</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure and transparent transactions</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Special prayers for donors</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.page-hero {
+    height: 60vh;
+   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
+    cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.page-hero-content {
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.donation-form-section {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.donation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.donation-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.donation-impact h3 {
+    color: var(--temple-brown);
+    margin-bottom: 1rem;
+}
+
+.impact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.impact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.impact-list i {
+    color: var(--primary-gold);
+}
+
+.donation-form-container {
+    background: var(--text-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.form-title {
+    text-align: center;
+    color: var(--temple-brown);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.amount-selection {
+    margin-bottom: 1.5rem;
+}
+
+.amount-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.amount-btn {
+    padding: 0.75rem;
+    border: 2px solid var(--primary-gold);
+    background: transparent;
+    color: var(--primary-gold);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.amount-btn:hover,
+.amount-btn.active {
+    background: var(--primary-gold);
+    color: var(--text-dark);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--temple-brown);
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 3px var(--shadow-light);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.donation-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.other-donations {
+    padding: 5rem 0;
+    background: var(--cream);
+}
+
+.donation-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.method-card {
+    background: var(--text-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    text-align: center;
+}
+
+.method-icon {
+    font-size: 3rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.bank-details,
+.address-details {
+    background: var(--light-cream);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.volunteer-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.volunteer-list li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.volunteer-link {
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.volunteer-link:hover {
+    color: var(--temple-brown);
+}
+
+.donation-recognition {
+    padding: 5rem 0;
+    background: var(--light-cream);
+    text-align: center;
+}
+
+.recognition-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recognition-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--temple-brown);
+    font-weight: 600;
+}
+
+.feature-item i {
+    color: var(--primary-gold);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .donation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .amount-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recognition-features {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const amountInput = document.getElementById('amount');
+    
+    amountButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Set amount value
+            const amount = this.dataset.amount;
+            if (amount === 'custom') {
+                amountInput.value = '';
+                amountInput.focus();
+            } else {
+                amountInput.value = amount;
+            }
+        });
+    });
+    
+    // Handle custom amount input
+    amountInput.addEventListener('input', function() {
+        amountButtons.forEach(btn => btn.classList.remove('active'));
+        const customBtn = document.querySelector('[data-amount="custom"]');
+        if (customBtn) customBtn.classList.add('active');
+    });
+});
+</script>
+{% endblock %}

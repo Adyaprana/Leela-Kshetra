@@ -1,0 +1,540 @@
+{% extends "base.html" %}
+
+{% block title %}Our Deities - Jagannath And Radhakrishna Temple{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-title">Our Sacred Deities</h1>
+            <p class="page-subtitle">Meet the divine forms that bless our temple with their eternal presence</p>
+        </div>
+    </div>
+</section>
+
+<!-- Deities Content -->
+<section class="deities-section">
+    <div class="container">
+        <!-- Lord Jagannath Section -->
+        <div class="deity-category">
+            <h2 class="category-title">
+                <i class="fas fa-om"></i>
+                Lord Jagannath & Family
+            </h2>
+            <div class="deities-grid">
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Lord-Jagannath1.jpg') }}" alt="Lord Jagannath">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Lord Jagannath</h3>
+                        <p class="deity-description">
+                            Jagannath is a Hindu deity, considered an incarnation of Lord Vishnu, 
+                            revered in Odisha, India. His annual Rath Yatra festival is a major 
+                            pilgrimage. The name means "Lord of the Universe"; also known as 
+                            Mahaprabhu, the "Great Lord."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Lord-Jagannath.jpg') }}" alt="Lord Balabhadra">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Lord Balabhadra</h3>
+                        <p class="deity-description">
+                            White-colored brother of Lord Jagannath, symbolizing strength and power. 
+                            He represents the divine strength that supports and protects devotees.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Lord-Jagannath2.jpg') }}" alt="Subhadra">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Subhadra</h3>
+                        <p class="deity-description">
+                            Yellow-colored sister of Lord Jagannath, symbolizes compassion and 
+                            auspiciousness. She represents divine feminine energy and motherly love.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Lord-Jagannath4.jpg') }}" alt="Sudarshan">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Sudarshan</h3>
+                        <p class="deity-description">
+                            The divine weapon of Lord Vishnu, represents justice and protection. 
+                            It symbolizes the power that destroys evil and protects righteousness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   <!-- Lord Vishnu Avatars -->
+<div class="deity-category">
+    <h2 class="category-title">
+        <i class="fas fa-crown"></i> Dashavatar - Ten Avatars of Lord Vishnu 🌟
+    </h2>
+    <div class="avatars-grid">
+        <div class="avatar-item">
+            <div class="avatar-icon">🐟</div>
+            <h4>Matsya</h4>
+            <p>Fish avatar, saved humanity during the great flood</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🐢</div>
+            <h4>Kurma</h4>
+            <p>Tortoise avatar, supported the churning of the ocean</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🐗</div>
+            <h4>Varaha</h4>
+            <p>Boar avatar, rescued Earth from demon Hiranyaksha</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🦁</div>
+            <h4>Narasimha</h4>
+            <p>Man-lion avatar, killed demon Hiranyakashipu</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🧒</div>
+            <h4>Vamana</h4>
+            <p>Dwarf avatar, subdued demon king Bali</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🪓</div>
+            <h4>Parashurama</h4>
+            <p>Sage-warrior, rid the world of corrupt rulers</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🏹</div>
+            <h4>Rama</h4>
+            <p>Hero of Ramayana, represents dharma and virtue</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🪈</div>
+            <h4>Krishna</h4>
+            <p>Divine love incarnate, teacher of Bhagavad Gita</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🪷</div>
+            <h4>Buddha</h4>
+            <p>Represents peace and enlightenment</p>
+        </div>
+        <div class="avatar-item">
+            <div class="avatar-icon">🐎</div>
+            <h4>Kalki</h4>
+            <p>Future avatar, will end the age of darkness</p>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Other Deities -->
+        <div class="deity-category">
+            <h2 class="category-title">
+                <i class="fas fa-star"></i>
+                Other Sacred Deities
+            </h2>
+            <div class="deities-grid">
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Lord-Shiva.jpg') }}" alt="Lord Shiva">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Lord Shiva</h3>
+                        <p class="deity-description">
+                            Mahadev, the destroyer and transformer within the Hindu trinity. 
+                            Often depicted with a serpent around his neck and holding a trident.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Lord-Ganesha.jpg') }}" alt="Lord Ganesha">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Lord Ganesha</h3>
+                        <p class="deity-description">
+                            The elephant-headed god, revered as the remover of obstacles and 
+                            the god of wisdom, prosperity, and good fortune.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Maa-Durga.jpg') }}" alt="Goddess Durga">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Maa Durga</h3>
+                        <p class="deity-description">
+                            Powerful goddess depicted with multiple arms wielding weapons, 
+                            symbolizing divine feminine energy that overcomes evil.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="deity-card">
+                    <div class="deity-image">
+                        <img src="{{ url_for('static', filename='images/Radha-Krishna.jpg') }}" alt="Radha Krishna">
+                        <div class="deity-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="deity-info">
+                        <h3 class="deity-name">Radha Krishna</h3>
+                        <p class="deity-description">
+                            Eternal divine couple symbolizing divine love, devotion, and the 
+                            soul's yearning for union with the Supreme.
+                        </p>
+                    </div>
+                </div>
+                  <div class="deity-card">
+            <div class="deity-image">
+                <img src="{{ url_for('static', filename='images/Maa-Lakshmi.jpg') }}" alt="Goddess Lakshmi">
+                <div class="deity-overlay">
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="deity-info">
+                <h3 class="deity-name">Maa Lakshmi</h3>
+                <p class="deity-description">
+                    Goddess of wealth, fortune, and prosperity. Depicted with lotus flowers and coins symbolizing abundance.
+                </p>
+            </div>
+        </div>
+
+        <!-- New Deity: Lord Hanuman -->
+        <div class="deity-card">
+            <div class="deity-image">
+                <img src="{{ url_for('static', filename='images/Lord-Hanuman.jpg') }}" alt="Lord Hanuman">
+                <div class="deity-overlay">
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="deity-info">
+                <h3 class="deity-name">Lord Hanuman</h3>
+                <p class="deity-description">
+                    Devotee of Lord Rama, symbol of strength, devotion, and courage. Known for his unwavering faith and immense power.
+                </p>
+            </div>
+        </div>
+
+       
+
+        <!-- New Deity: Maa Saraswati -->
+        <div class="deity-card">
+            <div class="deity-image">
+                <img src="{{ url_for('static', filename='images/Maa-Saraswati.jpg') }}" alt="Maa Saraswati">
+                <div class="deity-overlay">
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="deity-info">
+                <h3 class="deity-name">Maa Saraswati</h3>
+                <p class="deity-description">
+                    Goddess of wisdom, music, and learning. Often shown with a veena and white swan, symbolizing purity and knowledge.
+                </p>
+            </div>
+        </div>
+        <!-- Sri Ram & Sita -->
+<div class="deity-card">
+    <div class="deity-image">
+        <img src="{{ url_for('static', filename='images/Sriram-Sita.jpg') }}" alt="Sriram and Sita">
+        <div class="deity-overlay">
+            <i class="fas fa-eye"></i>
+        </div>
+    </div>
+    <div class="deity-info">
+        <h3 class="deity-name"> Sri Ram & Sita</h3>
+        <p class="deity-description">
+            Divine couple representing the ideals of dharma, devotion, and marital virtue. Central figures of the epic Ramayana.
+        </p>
+    </div>
+</div>
+
+<!-- Lord Vishnu -->
+<div class="deity-card">
+    <div class="deity-image">
+        <img src="{{ url_for('static', filename='images/Lord-Vishnu.jpg') }}" alt="Lord Vishnu">
+        <div class="deity-overlay">
+            <i class="fas fa-eye"></i>
+        </div>
+    </div>
+    <div class="deity-info">
+        <h3 class="deity-name">🌌 Lord Vishnu</h3>
+        <p class="deity-description">
+            The preserver in the Hindu trinity. Protector of the universe who incarnates in many forms to restore cosmic balance.
+        </p>
+    </div>
+</div>
+
+<!-- Lord Kartikeya (Murugan) -->
+<div class="deity-card">
+    <div class="deity-image">
+        <img src="{{ url_for('static', filename='images/Lord-Kartikeya.jpg') }}" alt="Lord Kartikeya">
+        <div class="deity-overlay">
+            <i class="fas fa-eye"></i>
+        </div>
+    </div>
+    <div class="deity-info">
+        <h3 class="deity-name">🗡️ Lord Kartikeya</h3>
+        <p class="deity-description">
+            Warrior god and son of Lord Shiva and Parvati. Known as Murugan, he symbolizes valor, youth, and divine leadership.
+        </p>
+    </div>
+</div>
+<!-- Nandi -->
+<div class="deity-card">
+    <div class="deity-image">
+        <img src="{{ url_for('static', filename='images/Nandi.jpg') }}" alt="Nandi">
+        <div class="deity-overlay">
+            <i class="fas fa-eye"></i>
+        </div>
+    </div>
+    <div class="deity-info">
+        <h3 class="deity-name">🐂 Nandi</h3>
+        <p class="deity-description">
+            The sacred bull and devoted gatekeeper of Lord Shiva. Symbolizes strength, loyalty, and dharma in Hindu tradition.
+        </p>
+    </div>
+</div>
+<!-- Garuda -->
+<div class="deity-card">
+    <div class="deity-image">
+        <img src="{{ url_for('static', filename='images/Garuda.jpg') }}" alt="Garuda">
+        <div class="deity-overlay">
+            <i class="fas fa-eye"></i>
+        </div>
+    </div>
+    <div class="deity-info">
+        <h3 class="deity-name">🦅 Garuda</h3>
+        <p class="deity-description">
+            The mighty eagle and vehicle of Lord Vishnu. Symbol of speed, strength, and divine service, Garuda is often worshipped for protection from evil and poison.
+        </p>
+    </div>
+</div>
+
+    </div>
+</div>
+
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.page-hero {
+    height: 60vh;
+   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
+    cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.page-hero-content {
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.deities-section {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.deity-category {
+    margin-bottom: 5rem;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--temple-brown);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.category-title i {
+    color: var(--primary-gold);
+}
+
+.deities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.deity-card {
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    transition: var(--transition);
+}
+
+.deity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+.deity-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.deity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.deity-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 24, 16, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.deity-overlay i {
+    color: var(--secondary-gold);
+    font-size: 2rem;
+}
+
+.deity-card:hover .deity-overlay {
+    opacity: 1;
+}
+
+.deity-card:hover .deity-image img {
+    transform: scale(1.1);
+}
+
+.deity-info {
+    padding: 1.5rem;
+}
+
+.deity-name {
+    color: var(--temple-brown);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.deity-description {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.avatars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.avatar-item {
+    background: var(--text-light);
+    padding: 2rem 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: var(--transition);
+}
+
+.avatar-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.avatar-icon {
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.avatar-item h4 {
+    color: var(--temple-brown);
+    margin-bottom: 0.5rem;
+}
+
+.avatar-item p {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .category-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .avatars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .avatars-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

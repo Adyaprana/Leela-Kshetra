@@ -1,0 +1,587 @@
+{% extends "base.html" %}
+
+{% block title %}Temple Blog - Jagannath And Radhakrishna Temple{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-title">Spiritual Insights & Temple News</h1>
+            <p class="page-subtitle">Discover wisdom, stories, and updates from our sacred community</p>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts -->
+<section class="blog-posts-section">
+    <div class="container">
+        <div class="blog-intro">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="blog-description">
+                Explore our collection of spiritual articles, temple updates, and insights 
+                from ancient wisdom traditions that guide us on our divine journey.
+            </p>
+        </div>
+
+        <div class="blog-posts-grid">
+            <article class="blog-post-card featured">
+                <div class="blog-post-image">
+                    <img src="{{ url_for('static', filename='images/Rath-Yatra-blog.jpg') }}" alt="Rath Yatra">
+                    <div class="blog-post-category">Featured</div>
+                </div>
+                <div class="blog-post-content">
+                    <div class="blog-post-meta">
+                        <span class="blog-date">
+                            <i class="fas fa-calendar"></i> December 15, 2024
+                        </span>
+                        <span class="blog-author">
+                            <i class="fas fa-user"></i>Adyaprana Pradhan
+                        </span>
+                    </div>
+                    <h2 class="blog-post-title">The Significance of Rath Yatra</h2>
+                    <p class="blog-post-excerpt">
+                        Rath Yatra, also known as the Festival of Chariots, is one of the most famous Hindu festivals. 
+                        Celebrated primarily in Odisha, it symbolizes the journey of Lord Jagannath, Lord Balabhadra, and 
+                        Devi Subhadra from their temple to Gundicha Mandir. This auspicious event not only unites 
+                        devotees in faith and joy but also spreads the message of equality as everyone is welcome to 
+                        pull the sacred chariots.
+                    </p>
+                    <a href="#" class="blog-read-more">
+                        Read Full Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{{ url_for('static', filename='images/Morning-Meditation.jpeg') }}" alt="Morning Meditation">
+                    <div class="blog-post-category">Spiritual Practice</div>
+                </div>
+                <div class="blog-post-content">
+                    <div class="blog-post-meta">
+                        <span class="blog-date">
+                            <i class="fas fa-calendar"></i> December 10, 2024
+                        </span>
+                        <span class="blog-author">
+                            <i class="fas fa-user"></i> Adyaprana Pradhan
+                        </span>
+                    </div>
+                    <h3 class="blog-post-title">The Benefits of Morning Meditation</h3>
+                    <p class="blog-post-excerpt">
+                        Morning meditation within a temple premise brings unparalleled serenity to one's mind. The 
+                        calming chants and fragrance of incense help you focus, reduce stress, and enhance your 
+                        spiritual connection. Many devotees find a renewed sense of purpose and calmness as they 
+                        meditate in the holy presence of their deities.
+                    </p>
+                    <a href="#" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{{ url_for('static', filename='images/Bhagavad-Gita.png') }}" alt="Bhagavad Gita">
+                    <div class="blog-post-category">Sacred Texts</div>
+                </div>
+                <div class="blog-post-content">
+                    <div class="blog-post-meta">
+                        <span class="blog-date">
+                            <i class="fas fa-calendar"></i> December 5, 2024
+                        </span>
+                        <span class="blog-author">
+                            <i class="fas fa-user"></i> Temple Scholar
+                        </span>
+                    </div>
+                    <h3 class="blog-post-title">Wisdom from the Bhagavad Gita</h3>
+                    <p class="blog-post-excerpt">
+                        The Bhagavad Gita, a timeless scripture, imparts valuable life lessons and guides us on a path
+                        of righteousness. Weekly Gita classes in our temple delve into these teachings and offer an
+                        opportunity for devotees to learn, discuss, and implement its philosophies in daily life.
+                    </p>
+                    <a href="#" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{{ url_for('static', filename='images/Prasadam.jfif') }}" alt="Prasadam">
+                    <div class="blog-post-category">Temple Life</div>
+                </div>
+                <div class="blog-post-content">
+                    <div class="blog-post-meta">
+                        <span class="blog-date">
+                            <i class="fas fa-calendar"></i> November 30, 2024
+                        </span>
+                        <span class="blog-author">
+                            <i class="fas fa-user"></i> Community Team
+                        </span>
+                    </div>
+                    <h3 class="blog-post-title">The Blessing of Prasadam</h3>
+                    <p class="blog-post-excerpt">
+                        In Hindu temples, Prasadam signifies more than food. It is a divine offering made to the deities
+                        and then distributed among devotees as a token of blessings. Receiving Prasadam is not just
+                        about nourishment; it is a moment of spiritual connection with the divine grace of the Lord.
+                    </p>
+                    <a href="#" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{{ url_for('static', filename='images/Culture-through-Dance.jfif') }}" alt="Cultural Programs">
+                    <div class="blog-post-category">Culture</div>
+                </div>
+                <div class="blog-post-content">
+                    <div class="blog-post-meta">
+                        <span class="blog-date">
+                            <i class="fas fa-calendar"></i> November 25, 2024
+                        </span>
+                        <span class="blog-author">
+                            <i class="fas fa-user"></i> Cultural Committee
+                        </span>
+                    </div>
+                    <h3 class="blog-post-title">Celebrating Culture through Dance and Music</h3>
+                    <p class="blog-post-excerpt">
+                        Cultural programs organized by our temple showcase traditional Indian dance forms like Odissi and
+                        Bharatnatyam and classical music performances. These events highlight the deep spiritual
+                        connection between art and devotion and create a mesmerizing experience for everyone.
+                    </p>
+                    <a href="#" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-image">
+                    <img src="{{ url_for('static', filename='images/Z12.jpg') }}" alt="Temple Construction">
+                    <div class="blog-post-category">Temple Updates</div>
+                </div>
+                <div class="blog-post-content">
+                    <div class="blog-post-meta">
+                        <span class="blog-date">
+                            <i class="fas fa-calendar"></i> November 20, 2024
+                        </span>
+                        <span class="blog-author">
+                            <i class="fas fa-user"></i> Development Team
+                        </span>
+                    </div>
+                    <h3 class="blog-post-title">Temple Development Progress</h3>
+                    <p class="blog-post-excerpt">
+                        Our temple continues to grow and evolve to better serve our community. Recent developments 
+                        include enhanced facilities, improved accessibility, and expanded spaces for community 
+                        gatherings. We are grateful for the continued support of our devotees.
+                    </p>
+                    <a href="#" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="blog-categories">
+    <div class="container">
+        <h2 class="section-title">Explore by Category</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Featured</h3>
+                <p>Highlighted articles and important temple announcements</p>
+                <span class="category-count">3 Articles</span>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-meditation"></i>
+                </div>
+                <h3>Spiritual Practice</h3>
+                <p>Meditation, prayer, and spiritual growth guidance</p>
+                <span class="category-count">8 Articles</span>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Sacred Texts</h3>
+                <p>Insights from Bhagavad Gita, Vedas, and other scriptures</p>
+                <span class="category-count">12 Articles</span>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-temple"></i>
+                </div>
+                <h3>Temple Life</h3>
+                <p>Daily activities, rituals, and community events</p>
+                <span class="category-count">15 Articles</span>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h3>Culture</h3>
+                <p>Traditional arts, music, dance, and cultural celebrations</p>
+                <span class="category-count">6 Articles</span>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Temple Updates</h3>
+                <p>News, announcements, and development progress</p>
+                <span class="category-count">4 Articles</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Subscription -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-card">
+            <div class="newsletter-content">
+                <h2>Stay Connected with Our Temple</h2>
+                <p>
+                    Subscribe to our newsletter to receive the latest spiritual insights, 
+                    temple updates, and event announcements directly in your inbox.
+                </p>
+                <form class="newsletter-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </div>
+                    <p class="newsletter-note">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </form>
+            </div>
+            <div class="newsletter-image">
+                <img src="{{ url_for('static', filename='images/Z1.jpg') }}" alt="Temple Newsletter">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.page-hero {
+    height: 60vh;
+   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
+    cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.page-hero-content {
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.blog-posts-section {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.blog-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.blog-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post-card {
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    transition: var(--transition);
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+.blog-post-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.blog-post-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.featured .blog-post-image {
+    height: auto;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blog-post-card:hover .blog-post-image img {
+    transform: scale(1.1);
+}
+
+.blog-post-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--gradient-gold);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.blog-post-content {
+    padding: 2rem;
+}
+
+.blog-post-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--primary-gold);
+}
+
+.blog-post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.blog-post-title {
+    color: var(--temple-brown);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.featured .blog-post-title {
+    font-size: 1.8rem;
+}
+
+.blog-post-excerpt {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-read-more {
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blog-read-more:hover {
+    color: var(--temple-brown);
+}
+
+.blog-categories {
+    padding: 5rem 0;
+    background: var(--cream);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: var(--text-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.category-card h3 {
+    color: var(--temple-brown);
+    margin-bottom: 0.5rem;
+}
+
+.category-card p {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.category-count {
+    color: var(--primary-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.newsletter-section {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.newsletter-card {
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.newsletter-content {
+    padding: 3rem;
+}
+
+.newsletter-content h2 {
+    color: var(--temple-brown);
+    margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 3px var(--shadow-light);
+}
+
+.newsletter-note {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.newsletter-image {
+    height: 100%;
+    min-height: 300px;
+}
+
+.newsletter-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .blog-post-card.featured {
+        grid-column: span 1;
+        display: block;
+    }
+    
+    .newsletter-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+    
+    .newsletter-form .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

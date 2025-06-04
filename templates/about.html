@@ -1,0 +1,371 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Jagannath And Radhakrishna Temple{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-title">About Our Sacred Temple</h1>
+            <p class="page-subtitle">Discover the rich heritage and spiritual legacy of our divine sanctuary</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title">Our Sacred Journey</h2>
+                <p class="lead-text">
+                    Welcome to the Jagannath And Radhakrishna Temple, a beacon of spiritual light and divine grace. 
+                    Our temple stands as a testament to the eternal values of devotion, service, and unity that 
+                    define the Hindu way of life.
+                </p>
+                <p>
+                    For generations, our temple has served as a spiritual home for devotees seeking peace, 
+                    wisdom, and divine blessings. We are committed to preserving and sharing the rich 
+                    traditions of Hindu culture while fostering a welcoming environment for all seekers 
+                    of truth and spirituality.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/Z1.jpg') }}" alt="Temple View">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- History Section -->
+<section class="history-section">
+    <div class="container">
+        <div class="content-card">
+            <div class="card-header">
+                <i class="fas fa-history"></i>
+                <h2>Our Sacred History</h2>
+            </div>
+            <div class="card-content">
+                <p>
+                    The Jagannath And Radhakrishna Temple has a rich history spanning several decades. 
+                    Founded with the vision of creating a spiritual sanctuary where devotees could 
+                    connect with the divine, our temple has grown from humble beginnings to become 
+                    a cornerstone of the local Hindu community.
+                </p>
+                <p>
+                    Our temple's architecture reflects traditional Hindu design principles, incorporating 
+                    sacred geometry and spiritual symbolism that enhances the devotional experience. 
+                    Every element of our temple, from the intricate carvings to the sacred spaces, 
+                    has been designed to inspire reverence and facilitate spiritual growth.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision">
+    <div class="container">
+        <div class="mission-vision-grid">
+            <div class="mission-card">
+                <div class="card-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To cultivate spiritual growth and foster a community of faith through the practice 
+                    of meditation, chanting, and prayer. We strive to provide a welcoming and inclusive 
+                    environment for all seekers, regardless of their background or experience.
+                </p>
+            </div>
+            <div class="vision-card">
+                <div class="card-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To be a beacon of spiritual light, inspiring individuals to connect with their inner 
+                    selves and cultivate compassion, wisdom, and peace within themselves and the world 
+                    around them. We aspire to be a sanctuary where individuals can find solace, deepen 
+                    their faith, and contribute to the betterment of humanity.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<section class="leadership-section">
+    <div class="container">
+        <h2 class="section-title">Our Spiritual Leadership</h2>
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <div class="leader-image">
+                    <img src="{{ url_for('static', filename='images/placeholder-priest.jpg') }}" alt="Head Priest">
+                </div>
+                <div class="leader-info">
+                    <h3>Pandit Ji</h3>
+                    <p class="leader-title">Head Priest</p>
+                    <p class="leader-description">
+                        With over 25 years of dedicated service, our head priest guides the spiritual 
+                        activities of the temple and provides wisdom to our community.
+                    </p>
+                </div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-image">
+                    <img src="{{ url_for('static', filename='images/placeholder-trustee.jpg') }}" alt="Temple Trustee">
+                </div>
+                <div class="leader-info">
+                    <h3>Shri Trustee Ji</h3>
+                    <p class="leader-title">Temple Trustee</p>
+                    <p class="leader-description">
+                        Our dedicated trustee oversees the administrative and developmental activities 
+                        of the temple, ensuring its continued growth and service to the community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section">
+    <div class="container">
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-hands-praying"></i>
+                </div>
+                <h3>Devotion</h3>
+                <p>Unwavering dedication to the divine and spiritual practice</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community</h3>
+                <p>Building strong bonds and supporting one another in faith</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-dove"></i>
+                </div>
+                <h3>Peace</h3>
+                <p>Fostering inner tranquility and harmony in all aspects of life</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Service</h3>
+                <p>Selfless dedication to serving others and the divine</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.page-hero {
+    height: 60vh;
+   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
+    cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.page-hero-content {
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.about-content {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.lead-text {
+    font-size: 1.2rem;
+    color: var(--temple-brown);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.history-section {
+    padding: 5rem 0;
+    background: var(--cream);
+}
+
+.content-card {
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.card-header {
+    background: var(--gradient-gold);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.card-header i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.mission-vision {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.mission-card,
+.vision-card {
+    background: var(--text-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.leadership-section {
+    padding: 5rem 0;
+    background: var(--cream);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.leader-card {
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    text-align: center;
+}
+
+.leader-image {
+    height: 200px;
+    background: var(--gradient-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-info {
+    padding: 1.5rem;
+}
+
+.leader-title {
+    color: var(--primary-gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.values-section {
+    padding: 5rem 0;
+    background: var(--light-cream);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-item {
+    background: var(--text-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+.value-icon {
+    font-size: 3rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .about-grid,
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+}
+</style>
+{% endblock %}

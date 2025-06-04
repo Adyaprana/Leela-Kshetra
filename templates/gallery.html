@@ -1,0 +1,493 @@
+{% extends "base.html" %}
+
+{% block title %}Temple Gallery - Jagannath And Radhakrishna Temple{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-title">Sacred Gallery</h1>
+            <p class="page-subtitle">Witness the divine beauty and spiritual moments of our temple</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Navigation -->
+<section class="gallery-nav">
+    <div class="container">
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-category="all">All Photos</button>
+            <button class="filter-btn" data-category="deities">Deities</button>
+            <button class="filter-btn" data-category="festivals">Festivals</button>
+            <button class="filter-btn" data-category="architecture">Architecture</button>
+            <button class="filter-btn" data-category="ceremonies">Ceremonies</button>
+            <button class="filter-btn" data-category="community">Community</button>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<!-- Gallery Grid -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-grid" id="gallery-grid">
+            {% for image in images %}
+                {% set filename = image.split('/')[-1] %}
+                {% if 'Jagannath' in filename or 'Krishna' in filename or 'Ganesha' in filename or 'Shiva' in filename or 'Hanuman' in filename or
+                       'Durga' in filename or 'Vishnu' in filename or 'Lakshmi' in filename or 'Saraswati' in filename or 
+                       'Kartikeya' in filename or 'Nandi' in filename or 'Sriram' in filename or 'deities' in filename  %}
+                    {% set category = 'deities' %}
+                {% elif 'Yatra' in filename or 'Aarti' in filename or 'mandir-pratishtha' in filename or 'chandan-yatra-2025' in filename %}
+                    {% set category = 'festivals' %}
+                {% elif 'mandir' in filename or'temple' in filename or 'Garden' in filename or 'Space' in filename %}
+                    {% set category = 'architecture' %}
+                {% elif 'Ceremony' in filename %}
+                    {% set category = 'ceremonies' %}
+                {% elif 'Community' in filename %}
+                    {% set category = 'community' %}
+                {% else %}
+                    {% set category = 'all' %}
+                {% endif %}
+
+                <div class="gallery-item" data-category="{{ category }}">
+                    <img src="{{ url_for('static', filename='images/' + filename) }}" alt="{{ filename | replace('.jpg', '') | replace('-', ' ') }}" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>{{ filename | replace('.jpg', '') | replace('-', ' ') }}</h3>
+                            <p>{{ category | capitalize }} category</p>
+                        </div>
+                        <div class="gallery-actions">
+                            <button class="gallery-btn" onclick="openLightbox(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                            <button class="gallery-btn" onclick="downloadImage(this)">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- Load More Section -->
+<section class="load-more-section">
+    <div class="container">
+        <div class="load-more-content">
+            <p>Showing <span id="shown-count">12</span> of <span id="total-count">24</span> photos</p>
+            <button class="btn btn-outline" id="load-more-btn">
+                <i class="fas fa-plus"></i> Load More Photos
+            </button>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.page-hero {
+    height: 60vh;
+   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
+    cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.page-hero-content {
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-nav {
+    padding: 2rem 0;
+    background: var(--cream);
+    border-bottom: 1px solid #ddd;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-gold);
+    background: transparent;
+    color: var(--primary-gold);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-gold);
+    color: var(--text-dark);
+}
+
+.gallery-section {
+    padding: 3rem 0;
+    background: var(--light-cream);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    aspect-ratio: 4/3;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-medium);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(44, 24, 16, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-info {
+    align-self: flex-end;
+    color: var(--text-light);
+}
+
+.gallery-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-gold);
+}
+
+.gallery-info p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.gallery-actions {
+    align-self: flex-start;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gallery-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--primary-gold);
+    color: var(--text-dark);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-btn:hover {
+    background: var(--secondary-gold);
+    transform: scale(1.1);
+}
+
+.load-more-section {
+    padding: 3rem 0;
+    background: var(--cream);
+    text-align: center;
+}
+
+.load-more-content p {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-info {
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+.lightbox-info h3 {
+    color: var(--secondary-gold);
+    margin-bottom: 0.5rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gold);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    background: var(--secondary-gold);
+    transform: scale(1.1);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gold);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-nav:hover {
+    background: var(--secondary-gold);
+}
+
+.lightbox-prev {
+    left: -70px;
+}
+
+.lightbox-next {
+    right: -70px;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .gallery-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .lightbox-close {
+        top: -40px;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .lightbox-prev {
+        left: -50px;
+    }
+    
+    .lightbox-next {
+        right: -50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Gallery filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const category = this.dataset.category;
+            
+            galleryItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+// Lightbox functionality
+function openLightbox(button) {
+    const galleryItem = button.closest('.gallery-item');
+    const img = galleryItem.querySelector('img');
+    const info = galleryItem.querySelector('.gallery-info');
+    
+    // Create lightbox if it doesn't exist
+    let lightbox = document.querySelector('.lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <img src="/placeholder.svg" alt="">
+                <div class="lightbox-info">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <button class="lightbox-close">&times;</button>
+                <button class="lightbox-nav lightbox-prev">&#8249;</button>
+                <button class="lightbox-nav lightbox-next">&#8250;</button>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+        
+        // Close lightbox events
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    }
+    
+    // Set lightbox content
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxTitle = lightbox.querySelector('h3');
+    const lightboxDesc = lightbox.querySelector('p');
+    
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxTitle.textContent = info.querySelector('h3').textContent;
+    lightboxDesc.textContent = info.querySelector('p').textContent;
+    
+    // Show lightbox
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.querySelector('.lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function downloadImage(button) {
+    const galleryItem = button.closest('.gallery-item');
+    const img = galleryItem.querySelector('img');
+    
+    const link = document.createElement('a');
+    link.href = img.src;
+    link.download = img.alt || 'temple-image';
+    link.click();
+}
+</script>
+{% endblock %}
