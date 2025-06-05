@@ -40,17 +40,14 @@ past_events = [
     {
         "name": "Kartika Purnima",
         "date": "15/11/2024",
-        "description": "Kartik Purnima is a Hindu festival celebrated on the full moon day of the Kartik month.",
-        "image": "chandan-yatra-2025-2.jpg"
+        "description": "Kartik Purnima is a Hindu festival celebrated on the full moon day of the Kartik month."
     },
     {
         "name": "Rath Yatra",
         "date": "07/07/2024",
-        "description": "The Ratha Yatra, or Chariot Festival, is a Hindu religious festival celebrated annually in Puri, Odisha, India.",
-        "image": "Rath-Yatra-2024.jpg"
+        "description": "The Ratha Yatra, or Chariot Festival, is a Hindu religious festival celebrated annually in Puri, Odisha, India."
     }
 ]
-
 
 blog_posts = [
     {
@@ -81,11 +78,9 @@ def deities():
 def services():
     return render_template('services.html')
 
-
-@app.route("/events")
+@app.route('/events')
 def events_page():
-    upcoming_events = []  # Your future events
-    return render_template("events.html", events=upcoming_events, past_events=past_events)
+    return render_template('events.html', events=events, past_events=past_events)
 
 @app.route('/visit')
 def visit():
