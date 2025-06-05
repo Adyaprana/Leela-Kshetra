@@ -40,14 +40,17 @@ past_events = [
     {
         "name": "Kartika Purnima",
         "date": "15/11/2024",
-        "description": "Kartik Purnima is a Hindu festival celebrated on the full moon day of the Kartik month."
+        "description": "Kartik Purnima is a Hindu festival celebrated on the full moon day of the Kartik month.",
+        "image": "chandan-yatra-2025-2.jpg"
     },
     {
         "name": "Rath Yatra",
         "date": "07/07/2024",
-        "description": "The Ratha Yatra, or Chariot Festival, is a Hindu religious festival celebrated annually in Puri, Odisha, India."
+        "description": "The Ratha Yatra, or Chariot Festival, is a Hindu religious festival celebrated annually in Puri, Odisha, India.",
+        "image": "Rath-Yatra-2024.jpg"
     }
 ]
+
 
 blog_posts = [
     {

@@ -21,7 +21,7 @@
             <i class="fas fa-calendar-alt"></i>
             Upcoming Sacred Events
         </h2>
-        
+
         {% if events %}
         <div class="events-list">
             {% for event in events %}
@@ -67,13 +67,13 @@
             <i class="fas fa-history"></i>
             Recent Celebrations
         </h2>
-        
+
         {% if past_events %}
         <div class="past-events-grid">
             {% for event in past_events %}
             <div class="past-event-card">
                 <div class="past-event-image">
-                    <img src="{{ url_for('static', filename='images/Z' + (loop.index + 8)|string + '.jpg') }}" alt="{{ event.name }}">
+                    <img src="{{ url_for('static', filename='images/' + event.image) }}" alt="{{ event.name }}">
                     <div class="past-event-overlay">
                         <div class="past-event-date">{{ event.date }}</div>
                     </div>
@@ -86,6 +86,9 @@
             {% endfor %}
         </div>
         {% endif %}
+
+    </div>
+    {% endif %}
     </div>
 </section>
 
@@ -96,7 +99,7 @@
             <i class="fas fa-calendar-star"></i>
             Annual Festival Calendar
         </h2>
-        
+
         <div class="calendar-grid">
             <div class="festival-month">
                 <h3>Major Festivals</h3>
@@ -110,7 +113,7 @@
                             <p>Festival of Lights - October/November</p>
                         </div>
                     </div>
-                    
+
                     <div class="festival-item">
                         <div class="festival-icon">
                             <i class="fas fa-palette"></i>
@@ -120,7 +123,7 @@
                             <p>Festival of Colors - March</p>
                         </div>
                     </div>
-                    
+
                     <div class="festival-item">
                         <div class="festival-icon">
                             <i class="fas fa-baby"></i>
@@ -130,7 +133,7 @@
                             <p>Krishna's Birthday - August/September</p>
                         </div>
                     </div>
-                    
+
                     <div class="festival-item">
                         <div class="festival-icon">
                             <i class="fas fa-female"></i>
@@ -142,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="festival-month">
                 <h3>Special Occasions</h3>
                 <div class="festival-list">
@@ -155,7 +158,7 @@
                             <p>Chariot Festival - June/July</p>
                         </div>
                     </div>
-                    
+
                     <div class="festival-item">
                         <div class="festival-icon">
                             <i class="fas fa-moon"></i>
@@ -165,7 +168,7 @@
                             <p>Full Moon Festival - November</p>
                         </div>
                     </div>
-                    
+
                     <div class="festival-item">
                         <div class="festival-icon">
                             <i class="fas fa-sun"></i>
@@ -175,7 +178,7 @@
                             <p>Harvest Festival - January</p>
                         </div>
                     </div>
-                    
+
                     <div class="festival-item">
                         <div class="festival-icon">
                             <i class="fas fa-leaf"></i>
@@ -197,7 +200,7 @@
         <div class="participation-card">
             <h2>Join Our Celebrations</h2>
             <p>
-                Be part of our sacred celebrations and experience the joy of community worship. 
+                Be part of our sacred celebrations and experience the joy of community worship.
                 All are welcome to participate in our festivals and events.
             </p>
             <div class="participation-benefits">
@@ -233,337 +236,336 @@
 
 {% block extra_css %}
 <style>
-.page-hero {
-    height: 60vh;
-   background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center /
-    cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    margin-top: 80px;
-}
-
-.page-hero-content {
-    color: var(--text-light);
-    max-width: 600px;
-}
-
-.page-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-.upcoming-events-section {
-    padding: 5rem 0;
-    background: var(--light-cream);
-}
-
-.events-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.event-item {
-    background: var(--text-light);
-    border-radius: var(--border-radius);
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 30px var(--shadow-light);
-    overflow: hidden;
-    display: flex;
-    transition: var(--transition);
-}
-
-.event-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px var(--shadow-medium);
-}
-
-.event-date-badge {
-    background: var(--gradient-gold);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    color: var(--text-dark);
-    min-width: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.event-day {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.event-month {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-}
-
-.event-content {
-    padding: 2rem;
-    flex: 1;
-}
-
-.event-title {
-    color: var(--temple-brown);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.event-meta {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.event-time,
-.event-location {
-    color: var(--primary-gold);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.event-description {
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.event-actions {
-    display: flex;
-    gap: 1rem;
-}
-
-.no-events {
-    text-align: center;
-    padding: 3rem;
-    color: var(--text-dark);
-}
-
-.no-events i {
-    font-size: 4rem;
-    color: var(--primary-gold);
-    margin-bottom: 1rem;
-}
-
-.past-events-section {
-    padding: 5rem 0;
-    background: var(--cream);
-}
-
-.past-events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.past-event-card {
-    background: var(--text-light);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 10px 30px var(--shadow-light);
-    transition: var(--transition);
-}
-
-.past-event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px var(--shadow-medium);
-}
-
-.past-event-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-}
-
-.past-event-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.past-event-overlay {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--gradient-gold);
-    color: var(--text-dark);
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-}
-
-.past-event-card:hover .past-event-image img {
-    transform: scale(1.1);
-}
-
-.past-event-content {
-    padding: 1.5rem;
-}
-
-.past-event-title {
-    color: var(--temple-brown);
-    margin-bottom: 0.5rem;
-}
-
-.past-event-description {
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
-.festival-calendar {
-    padding: 5rem 0;
-    background: var(--light-cream);
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
-}
-
-.festival-month h3 {
-    color: var(--temple-brown);
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.festival-list {
-    background: var(--text-light);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: 0 10px 30px var(--shadow-light);
-}
-
-.festival-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-}
-
-.festival-item:last-child {
-    border-bottom: none;
-}
-
-.festival-icon {
-    font-size: 2rem;
-    color: var(--primary-gold);
-    width: 50px;
-    text-align: center;
-}
-
-.festival-info h4 {
-    color: var(--temple-brown);
-    margin-bottom: 0.25rem;
-}
-
-.festival-info p {
-    color: var(--text-dark);
-    font-size: 0.9rem;
-}
-
-.event-participation {
-    padding: 5rem 0;
-    background: var(--cream);
-}
-
-.participation-card {
-    background: var(--text-light);
-    padding: 3rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 10px 30px var(--shadow-light);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.participation-card h2 {
-    color: var(--temple-brown);
-    margin-bottom: 1rem;
-}
-
-.participation-card p {
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.participation-benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.benefit-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--temple-brown);
-    font-weight: 500;
-}
-
-.benefit-item i {
-    font-size: 2rem;
-    color: var(--primary-gold);
-}
-
-.participation-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .event-item {
-        flex-direction: column;
-    }
-    
-    .event-date-badge {
-        min-width: auto;
-        padding: 1rem;
-        flex-direction: row;
+    .page-hero {
+        height: 60vh;
+        background: linear-gradient(rgba(44, 24, 16, 0.4), rgba(139, 69, 19, 0.6)), url("/static/images/hero.jpg") center / cover no-repeat;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        gap: 1rem;
+        text-align: center;
+        position: relative;
+        margin-top: 80px;
     }
-    
-    .event-meta {
+
+    .page-hero-content {
+        color: var(--text-light);
+        max-width: 600px;
+    }
+
+    .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(236, 229, 229, 0.7);
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    .upcoming-events-section {
+        padding: 5rem 0;
+        background: var(--light-cream);
+    }
+
+    .events-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .event-item {
+        background: var(--text-light);
+        border-radius: var(--border-radius);
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px var(--shadow-light);
+        overflow: hidden;
+        display: flex;
+        transition: var(--transition);
+    }
+
+    .event-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px var(--shadow-medium);
+    }
+
+    .event-date-badge {
+        background: var(--gradient-gold);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        color: var(--text-dark);
+        min-width: 120px;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    .event-day {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .event-month {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+    }
+
+    .event-content {
+        padding: 2rem;
+        flex: 1;
+    }
+
+    .event-title {
+        color: var(--temple-brown);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .event-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .event-time,
+    .event-location {
+        color: var(--primary-gold);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
         gap: 0.5rem;
     }
-    
-    .calendar-grid {
-        grid-template-columns: 1fr;
+
+    .event-description {
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
     }
-    
-    .participation-actions {
+
+    .event-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .no-events {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-dark);
+    }
+
+    .no-events i {
+        font-size: 4rem;
+        color: var(--primary-gold);
+        margin-bottom: 1rem;
+    }
+
+    .past-events-section {
+        padding: 5rem 0;
+        background: var(--cream);
+    }
+
+    .past-events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .past-event-card {
+        background: var(--text-light);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 10px 30px var(--shadow-light);
+        transition: var(--transition);
+    }
+
+    .past-event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px var(--shadow-medium);
+    }
+
+    .past-event-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .past-event-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .past-event-overlay {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--gradient-gold);
+        color: var(--text-dark);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+    }
+
+    .past-event-card:hover .past-event-image img {
+        transform: scale(1.1);
+    }
+
+    .past-event-content {
+        padding: 1.5rem;
+    }
+
+    .past-event-title {
+        color: var(--temple-brown);
+        margin-bottom: 0.5rem;
+    }
+
+    .past-event-description {
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    .festival-calendar {
+        padding: 5rem 0;
+        background: var(--light-cream);
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 3rem;
+    }
+
+    .festival-month h3 {
+        color: var(--temple-brown);
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .festival-list {
+        background: var(--text-light);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: 0 10px 30px var(--shadow-light);
+    }
+
+    .festival-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .festival-item:last-child {
+        border-bottom: none;
+    }
+
+    .festival-icon {
+        font-size: 2rem;
+        color: var(--primary-gold);
+        width: 50px;
+        text-align: center;
+    }
+
+    .festival-info h4 {
+        color: var(--temple-brown);
+        margin-bottom: 0.25rem;
+    }
+
+    .festival-info p {
+        color: var(--text-dark);
+        font-size: 0.9rem;
+    }
+
+    .event-participation {
+        padding: 5rem 0;
+        background: var(--cream);
+    }
+
+    .participation-card {
+        background: var(--text-light);
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        box-shadow: 0 10px 30px var(--shadow-light);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .participation-card h2 {
+        color: var(--temple-brown);
+        margin-bottom: 1rem;
+    }
+
+    .participation-card p {
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .participation-benefits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .benefit-item {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 0.5rem;
+        color: var(--temple-brown);
+        font-weight: 500;
     }
-    
-    .participation-actions .btn {
-        width: 100%;
-        max-width: 250px;
+
+    .benefit-item i {
+        font-size: 2rem;
+        color: var(--primary-gold);
     }
-}
+
+    .participation-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+        .event-item {
+            flex-direction: column;
+        }
+
+        .event-date-badge {
+            min-width: auto;
+            padding: 1rem;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .event-meta {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .calendar-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .participation-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .participation-actions .btn {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
 </style>
 {% endblock %}
