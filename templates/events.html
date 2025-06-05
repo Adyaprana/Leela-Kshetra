@@ -73,7 +73,8 @@
             {% for event in past_events %}
             <div class="past-event-card">
                 <div class="past-event-image">
-                    <img src="{{ url_for('static', filename='images/' + event.image) }}" alt="{{ event.name }}">
+<img src="{{ url_for('static', filename='images/' + event.image) if event.image else url_for('static', filename='images/default.jpg') }}"
+     alt="{{ event.name }}">
                     <div class="past-event-overlay">
                         <div class="past-event-date">{{ event.date }}</div>
                     </div>
@@ -86,7 +87,6 @@
             {% endfor %}
         </div>
         {% endif %}
-
     </div>
     {% endif %}
     </div>

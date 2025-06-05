@@ -81,9 +81,11 @@ def deities():
 def services():
     return render_template('services.html')
 
-@app.route('/events')
-def events_page():
-    return render_template('events.html', events=events, past_events=past_events)
+
+@app.route("/events")
+def events():
+    upcoming_events = []  # Your future events
+    return render_template("events.html", events=upcoming_events, past_events=past_events)
 
 @app.route('/visit')
 def visit():
