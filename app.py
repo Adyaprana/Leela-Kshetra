@@ -83,7 +83,7 @@ def services():
 
 
 @app.route("/events")
-def events():
+def events_page():
     upcoming_events = []  # Your future events
     return render_template("events.html", events=upcoming_events, past_events=past_events)
 
