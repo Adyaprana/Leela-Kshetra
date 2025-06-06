@@ -3,7 +3,6 @@
 A beautiful, responsive Flask web application for the Jagannath And Radhakrishna Temple, featuring a luxurious design with traditional Indian spiritual aesthetics.
 
 ## ✨ Features
-
 ### 🎨 Design & User Experience
 - **Luxurious Premium Design** with gold-accented color palette
 - **Sanskrit & Devanagari Fonts** for authentic spiritual feel
