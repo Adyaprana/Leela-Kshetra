@@ -9,8 +9,9 @@ A beautiful, responsive Flask web application for the Jagannath And Radhakrishna
 - **Sanskrit & Devanagari Fonts** for authentic spiritual feel
 - **Fully Responsive** design for all devices
 - **Smooth Animations** and hover effects
-- **Modern UI Components** with traditional Indian motifs
+- **Modern UI Components** with traditional Indian motif
 
+  
 ### 🏛️ Temple Features
 - **Home Page** with hero section and daily quotes
 - **About Us** with temple history and mission
