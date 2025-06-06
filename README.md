@@ -132,7 +132,6 @@ The current version uses in-memory data. To add database support:
 4. Add migration support with Flask-Migrate
 
 ## 🚀 Deployment
-
 ### Heroku Deployment
 1. Create Heroku app: `heroku create your-app-name`
 2. Set environment variables: `heroku config:set SECRET_KEY=your-secret-key`
