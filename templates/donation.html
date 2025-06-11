@@ -19,26 +19,42 @@
     <div class="container">
         <div class="donation-grid">
             <div class="donation-info">
-                <h2 class="section-title">Make a Difference</h2>
-                <p class="donation-description">
-                    Your donations help us maintain our sacred temple, support community programs, 
-                    and continue our mission of spiritual service. Every contribution, no matter 
-                    the size, makes a meaningful impact on our temple community.
-                </p>
-                
-                <div class="donation-impact">
-                    <h3>How Your Donation Helps:</h3>
-                    <ul class="impact-list">
-                        <li><i class="fas fa-check-circle"></i> Temple maintenance and upkeep</li>
-                        <li><i class="fas fa-check-circle"></i> Daily puja and ritual expenses</li>
-                        <li><i class="fas fa-check-circle"></i> Community events and festivals</li>
-                        <li><i class="fas fa-check-circle"></i> Educational and spiritual programs</li>
-                        <li><i class="fas fa-check-circle"></i> Food distribution (Prasadam)</li>
-                        <li><i class="fas fa-check-circle"></i> Supporting temple staff</li>
-                    </ul>
-                </div>
-            </div>
+  <h2 class="section-title">Make a Difference</h2>
+  <p class="donation-description">
+    Your donations help us maintain our sacred temple, support community programs,
+    and continue our mission of spiritual service. Every contribution, no matter
+    the size, makes a meaningful impact on our temple community.
+  </p>
+
+  <div class="donation-impact">
+    <h3>How Your Donation Helps:</h3>
+    <ul class="impact-list">
+      <li><i class="fas fa-check-circle"></i>• Temple maintenance and upkeep</li>
+      <li><i class="fas fa-check-circle"></i>• Daily puja and ritual expenses</li>
+      <li><i class="fas fa-check-circle"></i>• Community events and festivals</li>
+      <li><i class="fas fa-check-circle"></i>• Educational and spiritual programs</li>
+      <li><i class="fas fa-check-circle"></i>• Food distribution (Prasadam)</li>
+      <li><i class="fas fa-check-circle"></i>• Supporting temple staff</li>
+    </ul>
+  </div>
+
+  <!-- Offline Donation Info Card -->
+  <div class="offline-donation-card">
+    <h2><i class="fas fa-donate"></i> Offline Donation Options:</h2>
+    <p>
+     <b> Currently, we are not accepting online payments. However, if you wish to support us, 
+      you can donate through the following methods:</b>
+    </p>
+    <ul>
+      <li><strong>Bank Transfer:</strong> Use our official temple bank account.</li>
+      <li><strong>Cheque Submission:</strong> Drop off your cheque at the temple office.</li>
+      <li><strong>In-Person:</strong> Visit the temple corridor and donate directly.</li>
+    </ul>
+  </div>
+</div>
+
             
+
             <div class="donation-form-container">
                 <form class="donation-form" method="POST">
                     <h3 class="form-title">
@@ -108,6 +124,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Other Ways to Donate -->
 <section class="other-donations">
@@ -242,6 +259,26 @@
     color: var(--temple-brown);
     margin-bottom: 1rem;
 }
+.donation-impact ul {
+    margin-bottom: 1rem;
+}
+
+.offline-donation-card h2{
+ color: var(--temple-brown);
+    margin-bottom: 1rem;
+}
+.offline-donation-card li strong {
+    margin-bottom: 1rem;
+    color: var(--temple-brown);
+    margin-bottom: 1rem;
+}
+.offline-donation-card p  {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    color: rgb(249, 10, 10);
+}
+
+
 
 .impact-list {
     list-style: none;
@@ -454,6 +491,7 @@
         flex-direction: column;
         align-items: center;
     }
+
 }
 </style>
 {% endblock %}
