@@ -1168,9 +1168,67 @@ section {
 }
 
 .footer-bottom-content p:last-child {
-  color: var(--secondary-gold); /* Highlight developer credit */
-  font-style: italic;
+  color: var(--light-cream);
+  font-weight: 500; /* Make copyright slightly bolder */
 }
+.footer-bottom-content p:last-child .dev-link {
+  color: var(--light-cream);
+  font-weight: 500;
+  text-decoration: none; /* Optional: remove underline */
+}
+.footer-bottom-content p:last-child a {
+  color: #FFD700; /* Soft gold */
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer; /* 👈 makes it feel clickable */
+  text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.footer-bottom-content p:last-child a:hover {
+  color: #ffffff; /* White */
+  text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.9);
+  transform: scale(1.03); /* 👈 slightly grows on hover */
+  text-decoration: underline; /* optional: adds underline on hover */
+}
+
+.footer-bottom-content p:last-child a:active {
+  transform: scale(0.98); /* 👈 press-down effect */
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5); /* quick flash */
+}
+.footer-bottom-content p:last-child a {
+  color: #FFD700;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+  padding: 6px 2px;  /* adds space for easy tapping */
+  display: inline-block;
+}
+
+.footer-bottom-content p:last-child a:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.9);
+  transform: scale(1.03);
+  text-decoration: underline;
+}
+
+.footer-bottom-content p:last-child a:active {
+  transform: scale(0.96);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 600px) {
+  .footer-bottom-content p:last-child a {
+    text-shadow: 0px 0px 4px rgba(255, 215, 0, 0.4); /* softer on mobile */
+    font-size: 1rem; /* adjust size */
+  }
+}
+
+
+
+
+
 
 /* Footer Responsive Design */
 @media (max-width: 768px) {
