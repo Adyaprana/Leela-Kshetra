@@ -50,7 +50,7 @@ A beautiful, responsive Flask app crafted for the **Jagannath & Radhakrishna Tem
 ## 🔴 Live Demo
 
 - **Website:** [Temple site](https://leela-kshetra.vercel.app/)
-- **Demo Video:** [Watch on X](https://twitter.com/Adyaprana21/status/1931012398749507921)
+- **Demo Video:** [Watch on X](https://x.com/Adyaprana21/status/1936091444067901757)
 
 ---
 
